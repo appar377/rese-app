@@ -27,7 +27,7 @@
       </select>
 
       <div class="search__img">
-        <img src="{{ asset('img/search.svg') }}" alt="">
+        <img src="{{ asset('imges/search.svg') }}" alt="">
       </div>
 
       <input name="search" id="search__change" class="search" type="search" placeholder="Search ...">
@@ -56,7 +56,7 @@
                 <form action="/favorite/delete" method="POST">
                   @csrf
                   <button class="favorite_btn">
-                    <img class="heart" src="{{asset('img/heart_fill.png')}}" alt="">
+                    <img class="heart" src="{{asset('imges/heart_fill.png')}}" alt="">
                   </button>
                   
                   <input name="shop_id" type="hidden" value="{{$item->id}}">      
@@ -66,7 +66,7 @@
                 <form action="/favorite" method="POST">
                   @csrf
                   <button class="favorite_btn">
-                    <img class="heart" src="{{asset('img/heart_empty.png')}}" alt="">
+                    <img class="heart" src="{{asset('imges/heart_empty.png')}}" alt="">
                   </button>
                   
                   <input name="shop_id" type="hidden" value="{{$item->id}}">

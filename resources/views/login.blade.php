@@ -16,7 +16,7 @@
     <div class="input__box">
       <div class="email__box">
         <div class="email__img">
-          <img src="{{ asset('img/email.svg') }}" alt="">
+          <img src="{{ asset('imges/email.svg') }}" alt="">
         </div>
         <input class="email" type="email" name="email" placeholder="Email">
       </div>
@@ -27,7 +27,7 @@
 
       <div class="password__box">
         <div class="password__img">
-          <img src="{{ asset('img/password.svg') }}" alt="">
+          <img src="{{ asset('imges/password.svg') }}" alt="">
         </div>
         <input class="password" type="password" name="password" placeholder="Password">
       </div>

@@ -20,7 +20,7 @@
         <div class="item--top">
 
           <div class="timer__img">
-            <img src="{{ asset('img/timer.svg') }}">
+            <img src="{{ asset('imges/timer.svg') }}">
           </div>
           <p class="reserve__count">予約{{$loop->iteration}}</p>
 
@@ -66,7 +66,7 @@
               <input name="shop_id" type="hidden" value="{{$favorite->shop->id}}"> 
 
               <button class="favorite_btn">
-                <img class="heart" src="{{asset('img/heart_fill.png')}}" alt="">
+                <img class="heart" src="{{asset('imges/heart_fill.png')}}" alt="">
               </button>     
             </form>
           </div>
