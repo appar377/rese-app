@@ -1,0 +1,27 @@
+.container {
+  padding: 30px 100px;
+}
+
+.text__box {
+  width: 33%;
+  margin: 0 auto;
+  padding: 100px 25px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #999999;
+}
+
+.register__message {
+  font-size: 22px;
+  padding-bottom: 50px;
+}
+
+.login__link{
+  display: inline-block;
+  padding: 5px 12px;
+  color: white;
+  background-color: #0044ff;
+  border-radius: 5px;
+  border: solid 1px black;
+}

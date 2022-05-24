@@ -1,0 +1,62 @@
+.container {
+  padding: 30px 100px;
+}
+
+.login__form {
+  width: 33%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #999999;
+}
+
+.form__ttl {
+  border-radius: 5px 5px 0 0;
+  color: white;
+  background-color: #0044ff;
+  padding: 15px;
+}
+
+.input__box {
+  padding: 20px;
+}
+
+.email__box,
+.password__box {
+  padding: 10px 0;
+}
+
+.email__box,
+.password__box {
+  display: flex;
+}
+
+.email__img,
+.password__img {
+  width: 30px;
+  padding-right: 10px;
+}
+
+.email__img img,
+.password__img img {
+  width: 100%;
+}
+
+.email,
+.password {
+  width: 100%;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  border-bottom: solid 1px black;
+  background-color: initial;
+}
+
+.login__btn {
+  display: block;
+  color: #ffffff;
+  background-color: #0044ff;
+  border-radius: 5px;
+  margin: 0 0 0 auto;
+  padding: 5px 10px;
+}

@@ -1,0 +1,61 @@
+.container {
+  padding: 30px 100px;
+}
+
+.register__form {
+  width: 33%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #999999;
+}
+
+.form__ttl {
+  color: white;
+  background-color: #0044ff;
+  padding: 15px;
+  border-radius: 5px 5px 0 0;
+}
+
+.input__box {
+  padding: 20px;
+}
+.name__box,
+.email__box,
+.password__box {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.person__img,
+.email__img,
+.password__img {
+  width: 30px;
+  padding-right: 10px;
+}
+
+.person__img img,
+.email__img img,
+.password__img img {
+  width: 100%;
+}
+
+.name,
+.email,
+.password {
+  width: 100%;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  border-bottom: solid 1px black;
+  background-color: initial;
+}
+
+.register__btn {
+  display: block;
+  color: #ffffff;
+  background-color: #0044ff;
+  border-radius: 5px;
+  margin: 0 0 0 auto;
+  padding: 5px 15px;
+}
