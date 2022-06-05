@@ -1,13 +1,9 @@
-.container {
-  padding: 30px 100px;
-}
-
 .text__box {
   width: 33%;
   margin: 0 auto;
   padding: 100px 25px;
   text-align: center;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 2px #999999;
 }
@@ -19,8 +15,15 @@
 
 .turn__link{
   padding: 5px 12px;
-  color: white;
+  color: #ffffff;
   background-color: #0044ff;
   border-radius: 5px;
-  border: solid 1px black;
+  border: solid 1px #000000;
+}
+
+
+@media screen and (max-width: 768px) {
+  .text__box {
+    width: 50%;
+  }
 }

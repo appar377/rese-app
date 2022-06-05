@@ -7,19 +7,16 @@
 @section('content')
 <div class="detail__container">
   <div class="detail__left">
-    <header class="header">
-      <x-menu />
-    </header>
     <a class="turn__link" href="/"><</a>
-    <p class="shop__name">{{$item->name}}</p>
+    <p class="shop__name">{{$shop->name}}</p>
 
     <div class="detail__left__img">
-      <img src="{{$item->img}}" alt="">
+      <img src="{{$shop->img}}" alt="">
     </div>
 
-    <small class="hash">#{{$item->area->area}}</small>
-    <small class="hash">#{{$item->genre->genre}}</small>
-    <p class="text">{{$item->content}}</p>
+    <small class="hash">#{{$shop->area->area}}</small>
+    <small class="hash">#{{$shop->genre->genre}}</small>
+    <p class="text">{{$shop->content}}</p>
   </div>
 
   <div class="detail__right">
@@ -59,13 +56,13 @@
         <p>{{$errors->first('number')}}</p>
         @endif
 
-        <input name="shop_id" type="hidden" value="{{$item->id}}">
+        <input name="shop_id" type="hidden" value="{{$shop->id}}">
         <input name="user_id" type="hidden" value="{{Auth::id()}}">
       </div>
 
       <dl class="reserve__contents">
         <dt>Shop</dt>
-        <dd>{{$item->name}}</dd>
+        <dd>{{$shop->name}}</dd>
         <dt>Date</dt>
         <dd id="date__show">{{now()->addDay(3)->format('Y-m-d')}}</dd>
         <dt>Time</dt>

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ReserveRequest;
-
 use Illuminate\Http\Request;
 
 use App\Models\Shop;
@@ -14,32 +12,34 @@ use Illuminate\Support\Facades\Session;
 
 class ShopController extends Controller
 {
-    public function index() {
-        $items = Shop::all();
+    public function index() 
+    {
+        $shops = Shop::all();
         $areas = Area::all();
         $genres = Genre::all();
 
-        Session::flush();
+        Session::remove('genre');
+        Session::remove('area');
 
-        return view('index',[
-            'items'=>$items,
-            'areas'=>$areas,
-            'genres'=>$genres
+        return view('index', [
+            'shops' => $shops,
+            'areas' => $areas,
+            'genres' => $genres
         ]);
     }
 
-    public function detail($shop_id) {
-        $item = Shop::find($shop_id);
-        return view('detail',['item'=>$item]);
+    public function detail($shop_id) 
+    {
+        $shop = Shop::find($shop_id);
+        return view('detail',['shop' => $shop]);
     }
 
-    public function search(Request $request) {
+    public function search(Request $request) 
+    {
         $areas = Area::all();
         $genres = Genre::all();
 
         $query = Shop::query();
-
-
 
         if(!empty($request->area_id)) {
             $query->where('area_id', $request->area_id);
@@ -55,12 +55,12 @@ class ShopController extends Controller
             $query->where('name','like',"%$request->search%");
         }
 
-        $items = $query->get();
+        $shops = $query->get();
 
-        return view('index',[
-            'items'=>$items,
-            'areas'=>$areas,
-            'genres'=>$genres
+        return view('index', [
+            'shops' => $shops,
+            'areas' => $areas,
+            'genres' => $genres
         ]);
     }
 }

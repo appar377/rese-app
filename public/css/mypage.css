@@ -1,7 +1,3 @@
-.header {
-  padding: 30px 100px;
-}
-
 .user__name {
   padding: 50px 0;
   text-align: center;
@@ -10,7 +6,7 @@
 
 .mypage__container {
   display: flex;
-  margin: 0 100px;
+  flex-wrap: wrap;
 }
 
 .my__reserve {
@@ -22,9 +18,18 @@
   padding-bottom: 30px;
 }
 
+.reserve__list {
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  margin-right: 40px;
+  padding: 0 5px 5px 0;
+}
+
 .reserve__item {
-  width: 70%;
-  color: white;
+  width: 100%;
+  color: #ffffff;
   background-color: #0044ff;
   border-radius: 5px;
   padding: 30px;
@@ -63,9 +68,9 @@
   width: 25px;
   height: 25px;
   margin: 0 0 0 auto;
-  border: solid 2px white;
+  border: solid 2px #ffffff;
   border-radius: 100px;
-  color: white;
+  color: #ffffff;
   background-color: #0044ff;
   font-size: 17px;
 }
@@ -84,13 +89,28 @@
 .reserve__item__contents dd {
   width: 60%;
   margin-left: 20%;
-  font-size: 17px;
+  font-size: 22px;
+}
+
+.update__input {
+  width: 100%;
+  height: 25px;
 }
 
 .reserve__item__contents > * {
   padding: 10px 0;
 }
 
+.update__btn {
+  display: block;
+  width: 150px;
+  color: #ffffff;
+  background-color: #0811ff;
+  border-radius: 5px;
+  margin: 15px 0 0 auto;
+  padding: 7px 0;
+  font-size: 16px;
+}
 
 .my__favorite {
   width: 60%;
@@ -103,14 +123,17 @@
 
 .shop__list {
   width: 100%;
+  height: 400px;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-y: scroll; 
 }
 
 .shop__item {
   list-style: none;
-  width: 40%;
-  height: auto;
-  margin-right: 40px;
+  width: 45%;
+  margin-bottom: 40px;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 2px #999999;
@@ -129,6 +152,7 @@
 .shop__item__ttl {
   padding: 10px 0;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .hash {
@@ -145,7 +169,7 @@
   width: 100px;
   display: block;
   text-align: center;
-  color: white;
+  color: #ffffff;
   background-color: #0044ff;
   border-radius: 5px;
   padding: 5px 15px;
@@ -159,4 +183,116 @@
 
 .favorite_btn img {
   width: 30px;
+}
+
+.review { 
+  width: 100%;
+  margin-top: 30px;
+}
+
+.review__ttl {
+  font-size: 22px;
+  padding-bottom: 30px;
+}
+
+.review__list { 
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-left: 5px;
+}
+
+.review__item {
+  width: 30%;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #999999;
+}
+
+.stars {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.star {
+  color: #eeee00;
+  font-size: 40px;
+  padding: 0 15px;
+}
+
+.comment {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.review__btn {
+  display: block;
+  width: 150px;
+  color: #ffffff;
+  background-color: #0811ff;
+  border-radius: 5px;
+  margin: 15px 0 0 auto;
+  padding: 7px 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .mypage__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .my__reserve  {
+    width: 45%;
+  }
+
+  .reserve__list {
+    width: 100%;
+  }
+
+  .reserve__item {
+    width: 100%;
+  }
+
+  .my__favorite {
+    width: 45%;
+  }
+
+  .shop__list {
+    width: 100%;
+  }
+
+  .shop__item {
+    width: 100%;
+  }
+
+  .stars {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  .star {
+    font-size: 30px;
+    padding: 2px;
+  }
+
+  .comment {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  .review__btn {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
 }

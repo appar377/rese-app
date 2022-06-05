@@ -12,7 +12,7 @@
     @else
       <li><a href="/">Home</a></li>
       <li><a href="/register">Registation</a></li>
-      <li><a href="/mypage">Mypage</a></li>
+      <li><a href="/login">Login</a></li>
     @endif
   </ul>
 </nav>

@@ -8,11 +8,13 @@ use App\Models\Reserve;
 
 class ReserveController extends Controller
 {
-    public function done() {
+    public function done() 
+    {
         return view('done');
     }
 
-    public function store(ReserveRequest $request) {
+    public function store(ReserveRequest $request) 
+    {
         Reserve::create([
             'shop_id' => $request->shop_id,
             'user_id' => $request->user_id,
@@ -20,11 +22,22 @@ class ReserveController extends Controller
             'time' => $request->time,
             'number' => $request->number,
         ]);
-        return redirect('done');
+        return redirect('/done');
+    }
+
+    public function update(ReserveRequest $request) 
+    {
+        Reserve::find($request->reserve_id)->update([
+            'date' => $request->date,
+            'time' => $request->time,
+            'number' => $request->number,
+        ]);
+        return redirect('/mypage');
     }
     
-    public function destroy(Request $request,$user_id) {
+    public function destroy(Request $request) 
+    {
         Reserve::find($request->reserve_id)->delete();
-        return redirect('/mypage/'.$user_id);
+        return redirect('/mypage');
     }
 }

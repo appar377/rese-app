@@ -6,10 +6,6 @@
 
 @section('content')
 <div class="container">
-  <header>
-    <x-menu />
-  </header>
-
   <form class="login__form" action="login" method="POST">
     @csrf
     <p class="form__ttl">Login</p>

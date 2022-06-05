@@ -7,16 +7,15 @@
   <title>Document</title>
   <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
   <link rel="stylesheet" href="{{ asset('css/menu.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/default.css') }}">
   @yield('pageCss')
 </head>
-<style>
-  body {
-    height: 100vh;
-    background-color: #eeeeee;
-  }
-</style>
 <body>
   <div class="content">
+    <header class="header">
+      <x-menu />
+    </header>
+    
     @yield('content')
   </div>
 

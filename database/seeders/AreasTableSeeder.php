@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\Area;
-
 
 class AreasTableSeeder extends Seeder
 {
@@ -16,19 +14,16 @@ class AreasTableSeeder extends Seeder
      */
     public function run()
     {
-        $param = new Area([
+        Area::create([
             'area' => '東京都'
         ]);
-        $param->save();
 
-        $param = new Area([
+        Area::create([
             'area' => '大阪府'
         ]);
-        $param->save();
 
-        $param = new Area([
+        Area::create([
             'area' => '福岡県'
         ]);
-        $param->save();
     }
 }

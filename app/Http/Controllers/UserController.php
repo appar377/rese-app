@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Requests\RegisterRequest;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function mypage() {
-        return view('/mypage');
+    public function mypage() 
+    {
+        $user = Auth::user();
+        $reserves = Auth::user()->reserves;
+        $favorites = Auth::user()->favorites;
+        return view('mypage', [
+            'user' => $user, 
+            'reserves' => $reserves, 
+            'favorites' => $favorites
+        ]);
     }
 }

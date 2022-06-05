@@ -1,0 +1,20 @@
+body {
+  height: 100vh;
+  background-color: #eeeeee;
+}
+
+.header {
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.content {
+  margin: 40px 100px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    margin: 40px 50px 0;
+  }
+}

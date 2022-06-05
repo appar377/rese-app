@@ -6,10 +6,6 @@
 
 @section('content')
 <div class="container">
-  <header>
-    <x-menu />
-  </header>
-
   <form class="register__form" action="/register" method="POST">
     @csrf
     <p class="form__ttl">Registration</p>
@@ -46,6 +42,13 @@
       @if ($errors->has('password'))
         <p>{{$errors->first('password')}}</p>
       @endif
+
+      <div class="password__box">
+        <div class="password__img">
+          <img src="{{ asset('imges/password.svg') }}" alt="">
+        </div>
+        <input class="password" type="password" name="password_confirmation" placeholder="Password Confirm">
+      </div>
 
       <button class="register__btn">登録</button>
     </div>
