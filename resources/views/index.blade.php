@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ asset('css/index.css')}}">
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
 @section('content')
@@ -11,22 +11,24 @@
     <select class="area search__input" name="area_id" value="">
       <option value="" hidden>All area</option>
       @foreach($areas as $area)
-      <option value="{{$area->id}}" {{ session('area') == $area->id ? 'selected' : '' }}>{{$area->area}}</option>
+      <option value="{{ $area->id }}" {{ session('area') == $area->id ? 'selected' : '' }}>{{ $area->area }}</option>
       @endforeach
     </select>
 
     <select class="genre search__input" name="genre_id">
       <option value="" hidden>All genre</option>
       @foreach($genres as $genre)
-      <option value="{{$genre->id}}" {{ session('genre') == $genre->id ? 'selected' : '' }}>{{$genre->genre}}</option>
+      <option value="{{ $genre->id }}" {{ session('genre') == $genre->id ? 'selected' : '' }}>{{ $genre->genre }}</option>
       @endforeach
     </select>
 
-    <div class="search__img">
-      <img src="{{ asset('imges/search.svg') }}" alt="">
-    </div>
+    <div class="search__box">
+      <div class="search__img">
+        <img src="{{ asset('img/search.svg') }}" alt="">
+      </div>
 
-    <input name="search" id="search__change" class="search" type="search" placeholder="Search ...">
+      <input name="search" id="search__change" class="search" type="search" placeholder="Search ...">
+    </div>
   </form>
 </div>
 
@@ -35,48 +37,36 @@
     @foreach($shops as $shop)
     <li class="shop__item">
       <div class="shop__item__img">
-        <img src="{{$shop->img}}" alt="">
+        <img src="{{ $shop->img }}" alt="">
       </div>
       <div class="text__box">
-        <p class="shop__item__ttl">{{$shop->name}}</p>
-        <small class="hash">#{{$shop->area->area}}</small>
-        <small class="hash">#{{$shop->genre->genre}}</small>
+        <p class="shop__item__ttl">{{ $shop->name }}</p>
+        <small class="hash">#{{ $shop->area->area }}</small>
+        <small class="hash">#{{ $shop->genre->genre }}</small>
 
         <div class="btn__box">
-          <a class="detail__link" href="detail/{{$shop->id}}">詳しくみる</a>
+          <a class="detail__link" href="detail/{{ $shop->id }}">詳しくみる</a>
 
           @if(Auth::check())
-            @forelse(Auth::user()->favorites as $favorite)
-              @if($favorite->shop_id == $shop->id)
-                <form action="/favorite/delete" method="POST">
-                  @csrf
-                  <button class="favorite_btn">
-                    <img class="heart" src="{{asset('imges/heart_fill.png')}}" alt="">
-                  </button>
-                  
-                  <input name="shop_id" type="hidden" value="{{$shop->id}}">      
-                </form>
-                    @break
-              @elseif($loop->last)
-                <form action="/favorite" method="POST">
-                  @csrf
-                  <button class="favorite_btn">
-                    <img class="heart" src="{{asset('imges/heart_empty.png')}}" alt="">
-                  </button>
-                  
-                  <input name="shop_id" type="hidden" value="{{$shop->id}}">
-                </form>
-              @endif     
-              @empty
+            @if($shop->is_liked_by_auth_user())
+              <form action="/favorite/delete" method="POST">
+                @csrf
+                <button class="favorite_btn">
+                  <img class="heart" src="{{ asset('img/heart_fill.png') }}" alt="">
+                </button>
+                
+                <input name="shop_id" type="hidden" value="{{ $shop->id }}">      
+              </form>
+            @else
               <form action="/favorite" method="POST">
-                  @csrf
-                  <button class="favorite_btn">
-                    <img class="heart" src="{{asset('imges/heart_empty.png')}}" alt="">
-                  </button>
-                  
-                  <input name="shop_id" type="hidden" value="{{$shop->id}}">
-                </form>
-            @endforelse
+                @csrf
+                <button class="favorite_btn">
+                  <img class="heart" src="{{ asset('img/heart_empty.png') }}" alt="">
+                </button>
+                
+                <input name="shop_id" type="hidden" value="{{ $shop->id }}">
+              </form>
+            @endif
           @endif
         </div>
       </div>

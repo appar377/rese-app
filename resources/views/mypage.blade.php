@@ -1,29 +1,29 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ asset('css/mypage.css')}}">
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 @endsection
 
 @section('content')
-<h1 class="user__name">{{$user->name}}さん</h1>
+<h1 class="user__name">{{ $user->name }}さん</h1>
 
 <div class="mypage__container">
   <div class="my__reserve">
     <h2 class="reserve__ttl">予約状況</h2>
     <ul class="reserve__list">
-      @foreach($reserves as $reserve)
+      @foreach($user->reserves as $reserve)
         @if($reserve->date > now()->format('Y-m-d'))
           <li class="reserve__item">
             <div class="item--top">
 
               <div class="timer__img">
-                <img src="{{ asset('imges/timer.svg') }}">
+                <img src="{{ asset('img/timer.svg') }}">
               </div>
-              <p class="reserve__count">予約{{$loop->iteration}}</p>
+              <p class="reserve__count">予約{{ $loop->iteration }}</p>
 
               <form class="delete__form" action="/reserve/delete" method="POST">
                 @csrf
-                <input name="reserve_id" type="hidden" value="{{$reserve->id}}">
+                <input name="reserve_id" type="hidden" value="{{ $reserve->id }}">
                 <button class="delete__btn">×</button>
               </form>
             </div>
@@ -32,15 +32,15 @@
               @csrf
               <dl class="reserve__item__contents">
                 <dt>Shop</dt>
-                <dd>{{$reserve->shop->name}}</dd>
+                <dd>{{ $reserve->shop->name }}</dd>
 
                 <dt>Date</dt>
-                <dd><input class="update__input"  type="date" name="date" value="{{$reserve->date}}"></dd>
+                <dd><input class="update__input"  type="date" name="date" value="{{ $reserve->date }}"></dd>
 
                 <dt>Time</dt>
                 <dd>
                   <select class="update__input"  name="time">
-                    <option value="{{$reserve->time}}" hidden>{{$reserve->time}}</option>
+                    <option value="{{ $reserve->time }}" hidden>{{ date('H:i', strtotime($reserve->time)) }}</option>
                     <option value="17:00">17:00</option>
                     <option value="17:30">17:30</option>
                     <option value="18:00">18:00</option>
@@ -56,18 +56,18 @@
                 <dt>Number</dt>
                 <dd>
                   <select class="update__input" name="number">
-                    <option value="{{$reserve->number}}" hidden>{{$reserve->number}}人</option>
+                    <option value="{{ $reserve->number }}" hidden>{{ $reserve->number }}人</option>
                     @for($i=1;$i<=10;$i++)
-                      <option value="{{$i}}">{{$i}}人</option>
+                      <option value="{{ $i }}">{{ $i }}人</option>
                     @endfor
                   </select>
                 </dd>
               </dl>
 
-              <input name="reserve_id" type="hidden" value="{{$reserve->id}}">
+              <input name="reserve_id" type="hidden" value="{{ $reserve->id }}">
 
               @if ($errors->has('date'))
-                <p>{{$errors->first('date')}}</p>
+                <p>{{ $errors->first('date') }}</p>
               @endif
 
               <button class="update__btn">変更する</button>
@@ -81,25 +81,25 @@
   <div class="my__favorite">
     <h2 class="favorite__ttl">お気に入り店舗</h2>
     <ul class="shop__list">
-    @foreach($favorites as $favorite)
+    @foreach($user->favorites as $favorite)
       <li class="shop__item">
         <div class="shop__item__img">
-          <img src="{{$favorite->shop->img}}" alt="">
+          <img src="{{ $favorite->shop->img }}" alt="">
         </div>
         <div class="text__box">
-          <p class="shop__item__ttl">{{$favorite->shop->name}}</p>
-          <small class="hash">#{{$favorite->shop->area->area}}</small>
-          <small class="hash">#{{$favorite->shop->genre->genre}}</small>
+          <p class="shop__item__ttl">{{ $favorite->shop->name }}</p>
+          <small class="hash">#{{ $favorite->shop->area->area }}</small>
+          <small class="hash">#{{ $favorite->shop->genre->genre }}</small>
 
           <div class="btn__box">
-            <a class="detail__link" href="/detail/{{$favorite->shop->id}}">詳しくみる</a>
+            <a class="detail__link" href="/detail/{{ $favorite->shop->id }}">詳しくみる</a>
 
             <form action="/favorite/delete" method="POST">
               @csrf
-              <input name="shop_id" type="hidden" value="{{$favorite->shop->id}}"> 
+              <input name="shop_id" type="hidden" value="{{ $favorite->shop->id }}"> 
 
               <button class="favorite_btn">
-                <img class="heart" src="{{asset('imges/heart_fill.png')}}" alt="">
+                <img class="heart" src="{{ asset('img/heart_fill.png') }}" alt="">
               </button>     
             </form>
           </div>
@@ -111,49 +111,52 @@
 
   <div class="review">
     <h2 class="review__ttl">評価</h2>
+
     <ul class="review__list">
-      @foreach($reserves as $reserve)
+      @foreach($user->reserves as $reserve)
         @if($reserve->date < now()->format('Y-m-d'))
           <li class="review__item">
-            <div class="shop__item__img">
-              <img src="{{$reserve->shop->img}}" alt="">
-            </div>
+            <dl class="reserve__item__contents">
+              <dt>Shop</dt>
+              <dd>{{ $reserve->shop->name }}</dd>
 
-            <div class="text__box">
-              <p class="shop__item__ttl">{{$reserve->shop->name}}</p>
+              <dt>Date</dt>
+              <dd>{{ $reserve->date }}</dd>
 
-              <form action="/review" method="POST">
-                @csrf
-                <div class="stars" id="stars">
-                    <span class="star" data-star="1">☆</span>
-                    <span class="star" data-star="2">☆</span>
-                    <span class="star" data-star="3">☆</span>
-                    <span class="star" data-star="4">☆</span>
-                    <span class="star" data-star="5">☆</span>
-                </div>
+              <dt>Time</dt>
+              <dd>{{ date('H:i', strtotime($reserve->time)) }}</dd>
 
-                <input id="star__input" type="hidden" name="star" value="">
+              <dt>Number</dt>
+              <dd>{{ $reserve->number }}人</dd>
+            </dl>
 
-                <input type="hidden" name="user_id" value="{{Auth::id()}}">
+            <form action="/review" method="POST">
+              @csrf
+              <div class="stars" id="stars">
+                  <span class="star" data-star="1">☆</span>
+                  <span class="star" data-star="2">☆</span>
+                  <span class="star" data-star="3">☆</span>
+                  <span class="star" data-star="4">☆</span>
+                  <span class="star" data-star="5">☆</span>
+              </div>
 
-                <input type="hidden" name="shop_id" value="{{$reserve->shop->id}}">
+              <input id="star__input" type="hidden" name="star" value="">
 
-                <input type="hidden" name="reserve_id" value="{{$reserve->id}}">
+              <input type="hidden" name="reserve_id" value="{{ $reserve->id }}">
 
-                <textarea class="comment" name="comment" cols="30" rows="10"></textarea>
+              <textarea class="comment" name="comment" cols="30" rows="10"></textarea>
 
 
-                @if(count($errors) > 0)
-                  <ul>
-                    @foreach ($errors->all() as $error)
-                      <li>{{$error}}</li>
-                    @endforeach
-                  </ul>
-                @endif
+              @if(count($errors) > 0)
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              @endif
 
-                <button class="review__btn">評価する</button>
-              </form>
-            </div>
+              <button class="review__btn">評価する</button>
+            </form>
           </li>
         @endif
       @endforeach

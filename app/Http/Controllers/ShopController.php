@@ -14,7 +14,7 @@ class ShopController extends Controller
 {
     public function index() 
     {
-        $shops = Shop::all();
+        $shops = Shop::with('favorites')->get();
         $areas = Area::all();
         $genres = Genre::all();
 
@@ -55,7 +55,7 @@ class ShopController extends Controller
             $query->where('name','like',"%$request->search%");
         }
 
-        $shops = $query->get();
+        $shops = $query->with('favorites')->get();
 
         return view('index', [
             'shops' => $shops,

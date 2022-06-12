@@ -48,39 +48,39 @@
 
 ### 新規登録ページ
 
-![](/public/imges/readme/register.png)
+![](/public/img/readme/register.png)
 
 ### ログインページ
 
-![](/public/imges/readme/login.png)
+![](/public/img/readme/login.png)
 
 ### 新規登録完了ページ
 
-![](/public/imges/readme/thanks.png)
+![](/public/img/readme/thanks.png)
 
 ### ホームページ
 
-![](/public/imges/readme/shop_all.png)
+![](/public/img/readme/shop_all.png)
 
 ### マイページ
 
-![](/public/imges/readme/my_page.png)
+![](/public/img/readme/my_page.png)
 
 ### 店舗詳細ページ
 
-![](/public/imges/readme/shop_detail.png)
+![](/public/img/readme/shop_detail.png)
 
 ### 予約完了ページ
 
-![](/public/imges/readme/done.png)
+![](/public/img/readme/done.png)
 
 ### ログイン中メニュー
 
-![](/public/imges/readme/menu1.png)
+![](/public/img/readme/menu1.png)
 
 ### ログアウト中メニュー
 
-![](/public/imges/readme/menu2.png)
+![](/public/img/readme/menu2.png)
 
 
 ## 6.使用技術、バージョン
@@ -135,12 +135,12 @@
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| ユーザーを識別するID
-name | string | ユーザー名
-email | string | メールアドレス
+id | unsigned bigint　| ユーザーを識別するID
+name | varchar(255) | ユーザー名
+email | varchar(255) | メールアドレス
 email_verified_at | timestamp | -
-password | string | パスワード
-rememberToken | string | -
+password | varchar(255) | パスワード
+rememberToken | varchar(100) | -
 created_at | timestamp | 作成日時
 updated_at | timestamp | 更新日時
 
@@ -150,12 +150,12 @@ updated_at | timestamp | 更新日時
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| 店舗を識別するID
-name | string | 店舗名
-area_id | using bigint | エリアを識別するID
-genre_id | using bigint | ジャンルを識別するID
+id | unsigned bigint　| 店舗を識別するID
+name | varchar(255) | 店舗名
+area_id | unsigned bigint | エリアを識別するID
+genre_id | unsigned bigint | ジャンルを識別するID
 content | text | 店舗の説明
-img | string |　店舗画像へのURL
+img | varchar(255) |　店舗画像へのURL
 created_at | timestamp | 作成日時
 updated_at | timestamp | 更新日時
 
@@ -165,9 +165,9 @@ updated_at | timestamp | 更新日時
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| 予約データを識別するID
-user_id | using bigint | ユーザを識別するID
-shop_id | using bigint | 店舗を識別するID
+id | unsigned bigint　| 予約データを識別するID
+user_id | unsigned bigint | ユーザを識別するID
+shop_id | unsigned bigint | 店舗を識別するID
 number | int | 予約人数
 date | date | 予約日
 time | time | 予約時間
@@ -180,9 +180,9 @@ updated_at | timestamp | 更新日時
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| お気に入り登録したデータを識別するID
-user_id | using bigint | ユーザを識別するID
-shop_id | using bigint | 店舗を識別するID
+id | unsigned bigint　| お気に入り登録したデータを識別するID
+user_id | unsigned bigint | ユーザを識別するID
+shop_id | unsigned bigint | 店舗を識別するID
 created_at | timestamp | 作成日時
 updated_at | timestamp | 更新日時
 
@@ -192,8 +192,8 @@ updated_at | timestamp | 更新日時
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| エリアを識別するID
-area | string | エリア名
+id | unsigned bigint　| エリアを識別するID
+area | varchar(255) | エリア名
 created_at | timestamp | 作成日時
 updated_at | timestamp | 更新日時
 
@@ -203,8 +203,8 @@ updated_at | timestamp | 更新日時
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| ジャンルを識別するID
-genre | string | ジャンル名
+id | unsigned bigint　| ジャンルを識別するID
+genre | varchar(255)| ジャンル名
 created_at | timestamp | 作成日時
 updated_at | timestamp | 更新日時
 
@@ -214,9 +214,8 @@ updated_at | timestamp | 更新日時
 
 カラム名 | 属性 | 役割
 -|-|-
-id | using bigint　| ジャンルを識別するID
-user_id | using bigint | ユーザーを識別するID
-shop_id | using bigint | ジャンルを識別するID
+id | unsigned bigint　| ジャンルを識別するID
+reserve_id | unsigned bigint | 予約データを識別するID
 comment | text | コメント
 star | int | 星の数
 created_at | timestamp | 作成日時

@@ -120,6 +120,14 @@ return [
 
     'views' => true,
 
+    'redirects' => [
+        'login' => '/',
+        'logout' => '/login',
+        'password-confirmation' => null,
+        'register' => '/thanks',
+        'email-verification' => null,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Features

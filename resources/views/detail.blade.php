@@ -1,22 +1,22 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ asset('css/detail.css')}}">
+<link rel="stylesheet" href="{{ asset('css/detail.css') }}">
 @endsection
 
 @section('content')
 <div class="detail__container">
   <div class="detail__left">
     <a class="turn__link" href="/"><</a>
-    <p class="shop__name">{{$shop->name}}</p>
+    <p class="shop__name">{{ $shop->name }}</p>
 
     <div class="detail__left__img">
       <img src="{{$shop->img}}" alt="">
     </div>
 
-    <small class="hash">#{{$shop->area->area}}</small>
-    <small class="hash">#{{$shop->genre->genre}}</small>
-    <p class="text">{{$shop->content}}</p>
+    <small class="hash">#{{ $shop->area->area }}</small>
+    <small class="hash">#{{ $shop->genre->genre }}</small>
+    <p class="text">{{ $shop->content }}</p>
   </div>
 
   <div class="detail__right">
@@ -25,9 +25,9 @@
     <form action="/reserve" method="POST">
       @csrf
       <div class="input__box">
-        <input name="date" id="date__input" class="date" type="date" value="{{now()->addDay(3)->format('Y-m-d')}}">
+        <input name="date" id="date__input" class="date" type="date" value="{{ now()->format('Y-m-d') }}">
         @if ($errors->has('date'))
-        <p>{{$errors->first('date')}}</p>
+        <p>{{ $errors->first('date') }}</p>
         @endif
 
         <select name="time" id="time__input">
@@ -43,28 +43,28 @@
           <option value="21:00">21:00</option>
         </select>
         @if ($errors->has('time'))
-        <p>{{$errors->first('time')}}</p>
+        <p>{{ $errors->first('time') }}</p>
         @endif
 
         <select name="number" id="number__input">
           <option hidden>人数</option>
           @for($i=1;$i<=10;$i++)
-            <option value="{{$i}}">{{$i}}人</option>
+            <option value="{{$i}}">{{ $i }}人</option>
           @endfor
         </select>
         @if ($errors->has('number'))
         <p>{{$errors->first('number')}}</p>
         @endif
 
-        <input name="shop_id" type="hidden" value="{{$shop->id}}">
-        <input name="user_id" type="hidden" value="{{Auth::id()}}">
+        <input name="shop_id" type="hidden" value="{{ $shop->id }}">
+        <input name="user_id" type="hidden" value="{{ Auth::id() }}">
       </div>
 
       <dl class="reserve__contents">
         <dt>Shop</dt>
-        <dd>{{$shop->name}}</dd>
+        <dd>{{ $shop->name }}</dd>
         <dt>Date</dt>
-        <dd id="date__show">{{now()->addDay(3)->format('Y-m-d')}}</dd>
+        <dd id="date__show">{{ now()->addDay(3)->format('Y-m-d') }}</dd>
         <dt>Time</dt>
         <dd id="time__show">時間</dd>
         <dt>Number</dt>

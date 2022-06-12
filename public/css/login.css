@@ -1,6 +1,6 @@
 .login__form {
   width: 33%;
-  margin: 0 auto;
+  margin: 30px auto;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #999999;
@@ -60,6 +60,6 @@
 
 @media screen and (max-width: 768px) {
   .login__form {
-    width: 50%;
+    width: 100%;
   }
 }

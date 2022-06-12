@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class UserController extends Controller
 {
     public function mypage() 
     {
-        $user = Auth::user();
-        $reserves = Auth::user()->reserves;
-        $favorites = Auth::user()->favorites;
+        $user = User::with(['favorites', 'reserves'])->find(auth()->id());
+        
         return view('mypage', [
-            'user' => $user, 
-            'reserves' => $reserves, 
-            'favorites' => $favorites
+            'user' => $user
         ]);
     }
 }

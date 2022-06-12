@@ -15,8 +15,7 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('shop_id')->constrained();
+            $table->foreignId('reserve_id')->constrained();
             $table->text('comment');
             $table->integer('star');
             $table->timestamps();

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/menu.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
   <link rel="stylesheet" href="{{ asset('css/default.css') }}">
   @yield('pageCss')
 </head>
@@ -19,13 +19,13 @@
     @yield('content')
   </div>
 
-<script>
-  const target = document.getElementById("menu");
-  target.addEventListener('click', () => {
-  target.classList.toggle('open');
-  const nav = document.getElementById("nav");
-  nav.classList.toggle('in');
-  });
-</script>
+  <script>
+    const target = document.getElementById("menu");
+    target.addEventListener('click', () => {
+      target.classList.toggle('open');
+      const nav = document.getElementById("nav");
+      nav.classList.toggle('in');
+    });
+  </script>
 </body>
 </html>

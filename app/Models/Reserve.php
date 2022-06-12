@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Reserve extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'shop_id',
@@ -17,11 +18,13 @@ class Reserve extends Model
         'number',
     ];
 
-    public function user(){ 
+    public function user()
+    { 
         return $this->belongsTo('App\Models\User');
     }
 
-    public function shop(){ 
+    public function shop()
+    { 
         return $this->belongsTo('App\Models\Shop');
     }
 }

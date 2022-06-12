@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Favorite extends Model
 {
@@ -14,11 +15,13 @@ class Favorite extends Model
         'shop_id'
     ];
 
-    public function user(){ 
+    public function user()
+    { 
         return $this->belongsTo('App\Models\User');
     }
 
-    public function shop(){ 
+    public function shop()
+    { 
         return $this->belongsTo('App\Models\Shop');
     }
 }
