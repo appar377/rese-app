@@ -13,3 +13,5 @@
   <dt>人数</dt>
   <dd>{{ $reserve->number }}</dd>
 </dl>
+
+{!! QrCode::generate(url()->to('/collation/'.$reserve->id)) !!}

@@ -12,7 +12,7 @@
     <h2 class="reserve__ttl">予約状況</h2>
     <ul class="reserve__list">
       @foreach($user->reserves as $reserve)
-        @if($reserve->date > now()->format('Y-m-d'))
+        @if($reserve->visited == false)
           <li class="reserve__item">
             <div class="item--top">
 
@@ -70,7 +70,11 @@
                 <p>{{ $errors->first('date') }}</p>
               @endif
 
-              <button class="update__btn">変更する</button>
+              <div class="reserve__bottom">
+                {!! QrCode::generate(url()->to('/collation/'.$reserve->id)) !!}
+
+                <button class="update__btn">変更する</button>
+              </div>
             </form>
           </li>
         @endif
@@ -84,7 +88,7 @@
     @foreach($user->favorites as $favorite)
       <li class="shop__item">
         <div class="shop__item__img">
-          <img src="{{ $favorite->shop->img }}" alt="">
+          <img src="{{ asset('storage/'.$favorite->shop->img) }}" alt="">
         </div>
         <div class="text__box">
           <p class="shop__item__ttl">{{ $favorite->shop->name }}</p>
@@ -114,7 +118,7 @@
 
     <ul class="review__list">
       @foreach($user->reserves as $reserve)
-        @if($reserve->date < now()->format('Y-m-d'))
+        @if($reserve->visited == true)
           <li class="review__item">
             <dl class="reserve__item__contents">
               <dt>Shop</dt>

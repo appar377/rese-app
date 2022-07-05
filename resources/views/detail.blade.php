@@ -11,7 +11,7 @@
     <p class="shop__name">{{ $shop->name }}</p>
 
     <div class="detail__left__img">
-      <img src="{{$shop->img}}" alt="">
+      <img src="{{ asset('storage/'.$shop->img) }}" alt="">
     </div>
 
     <small class="hash">#{{ $shop->area->area }}</small>
@@ -63,6 +63,8 @@
       <dl class="reserve__contents">
         <dt>Shop</dt>
         <dd>{{ $shop->name }}</dd>
+        <dt>Price</dt>
+        <dd>{{ $shop->course }}({{ $shop->price }}円)</dd>
         <dt>Date</dt>
         <dd id="date__show">{{ now()->addDay(3)->format('Y-m-d') }}</dd>
         <dt>Time</dt>
@@ -71,7 +73,19 @@
         <dd id="number__show">人数</dd>
       </dl>
 
-      <button class="reserve__btn">予約する</button>
+      <button class="reserve__btn">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="{{ env('STRIPE_PUBLIC_KEY') }}"
+          data-amount="{{ $shop->price }}"
+          data-name="Stripe決済デモ"
+          data-label="予約(決済)する"
+          data-description="これはデモ決済です"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-currency="JPY">
+        </script>
+      </button>
     </form>
   </div>
 </div>

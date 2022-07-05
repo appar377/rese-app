@@ -11,14 +11,14 @@
     <select class="area search__input" name="area_id" value="">
       <option value="" hidden>All area</option>
       @foreach($areas as $area)
-      <option value="{{ $area->id }}" {{ session('area') == $area->id ? 'selected' : '' }}>{{ $area->area }}</option>
+        <option value="{{ $area->id }}" {{ ($area_id ?? '') == $area->id ? 'selected' : '' }}>{{ $area->area }}</option>
       @endforeach
     </select>
 
     <select class="genre search__input" name="genre_id">
       <option value="" hidden>All genre</option>
       @foreach($genres as $genre)
-      <option value="{{ $genre->id }}" {{ session('genre') == $genre->id ? 'selected' : '' }}>{{ $genre->genre }}</option>
+        <option value="{{ $genre->id }}" {{ ($genre_id ?? '') == $genre->id ? 'selected' : '' }}>{{ $genre->genre }}</option>
       @endforeach
     </select>
 
@@ -27,7 +27,7 @@
         <img src="{{ asset('img/search.svg') }}" alt="">
       </div>
 
-      <input name="search" id="search__change" class="search" type="search" placeholder="Search ...">
+      <input name="search" id="search__change" class="search" type="search" placeholder="Search ..." value="{{ $search ?? '' }}">
     </div>
   </form>
 </div>
@@ -37,7 +37,7 @@
     @foreach($shops as $shop)
     <li class="shop__item">
       <div class="shop__item__img">
-        <img src="{{ $shop->img }}" alt="">
+        <img src="{{ asset('storage/'.$shop->img) }}" alt="">
       </div>
       <div class="text__box">
         <p class="shop__item__ttl">{{ $shop->name }}</p>

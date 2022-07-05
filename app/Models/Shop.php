@@ -12,10 +12,13 @@ class Shop extends Model
 
     protected $fillable = [
         'name',
+        'user_id',
         'area_id',
         'genre_id',
         'content',
         'img',
+        'course',
+        'price',
     ];
 
     protected $guarded = [
@@ -35,6 +38,11 @@ class Shop extends Model
     public function genre()
     { 
         return $this->belongsTo('App\Models\Genre');
+    }
+
+    public function reserves()
+    {
+        return $this->hasMany('App\Models\Reserve');
     }
 
     public function is_liked_by_auth_user()

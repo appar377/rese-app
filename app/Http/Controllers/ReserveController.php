@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReserveRequest;
 use App\Models\Reserve;
+use App\Models\Shop;
 
 class ReserveController extends Controller
 {
@@ -39,5 +40,24 @@ class ReserveController extends Controller
     {
         Reserve::find($request->reserve_id)->delete();
         return redirect('/mypage');
+    }
+
+    public function confirmation($shop_id) 
+    {
+        $shop = Shop::find($shop_id);
+        $reserves = $shop->reserves;
+
+        return view('reserve_confirmation', [
+            'reserves' => $reserves,
+        ]);
+    }
+
+    public function collation($reserve_id)
+    {
+        Reserve::find($reserve_id)->update([
+            'visited' => true,
+        ]);
+
+        return view('collation');
     }
 }

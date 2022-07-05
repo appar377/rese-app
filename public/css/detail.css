@@ -37,6 +37,7 @@
 
 .detail__left__img img {
   width: 100%;
+  height: 450px;
 }
 
 .hash {
@@ -104,12 +105,23 @@
   bottom: 0;
   width: 100%;
   height: 50px;
-  color: #ffffff;
   background-color: #0011ff;
-  font-size: 20px;
   display: block;
   border: none;
   border-radius: 0 0 5px 5px;
+}
+
+button.stripe-button-el,
+button.stripe-button-el>span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 100% !important;
+  line-height: 50px;
+  font-size: 20px;
+  background: #0011ff !important;
+  background-color: #0011ff !important;
 }
 
 @media screen and (max-width: 768px) {

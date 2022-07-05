@@ -16,6 +16,7 @@ class Reserve extends Model
         'date',
         'time',
         'number',
+        'visited',
     ];
 
     public function user()

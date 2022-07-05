@@ -1,0 +1,190 @@
+.create__shop__ttl {
+  font-size: 24px;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.create__shop__form {
+  width: 100%;
+  padding: 30px 0;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.create__shop__form > * {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.label {
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input,
+.select {
+  height: 25px;
+}
+
+.input,
+.select,
+.textarea {
+  width: 60%;
+}
+
+.selected__create__img {
+  width: 40%;
+  height: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+}
+
+.selected__create__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.create__shop__btn {
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  padding: 0 15px;
+  font-size: 15px;
+}
+
+.shop__list {
+  height: 600px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-y: scroll; 
+  margin-top: 30px;
+}
+
+.shop__item {
+  width: 45%;
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.shop__item:nth-child(odd) {
+  margin-right: 20px;
+}
+
+.delete__btn__box {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.delete__btn {
+  border: 2px solid #ff0000;
+  border-radius: 50%;
+  padding: 3px 5px;
+}
+
+.shop__img {
+  width: 100%;
+}
+
+.shop__img img {
+  width: 100%;
+  height: 300px;
+}
+
+.shop__contents {
+  padding: 20px;
+}
+
+.shop__contents__dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop__contents__dl > * {
+  margin-bottom: 10px;
+}
+
+.shop__contents__dl > dt {
+  width: 30%;
+}
+
+.shop__contents__dl > dd {
+  width: 70%;
+}
+
+.input--update,
+.select--update {
+  height: 25px;
+}
+
+.input--update,
+.select--update,
+.textarea--update {
+  width: 90%;
+}
+
+.btn__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reserve__confirmation__link {
+  height: 30px;
+  line-height: 30px;
+  padding: 5px;
+  font-size: 15px;
+  color: #000000;
+  border: 1px solid #000000 ;
+  border-radius: 5px;
+}
+
+.update__btn {
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.error { 
+  color: #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+  .selected__create__img {
+    width: 90%;
+  }
+
+  .label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    width: 50%;
+  }
+  
+  .shop__item {
+    width: 100%;
+  }
+
+  .reserve__confirmation__link,
+  .update__btn {
+    font-size: 13px;
+  }
+}

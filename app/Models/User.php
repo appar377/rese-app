@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use \Illuminate\Contracts\Auth\Authenticatable as AuthenticableTrait;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail, AuthenticableTrait
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -21,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'visited',
+        'email_verified_at',
+        'role'
     ];
 
     /**
@@ -50,5 +54,10 @@ class User extends Authenticatable
     public function reserves()
     { 
         return $this->hasMany('App\Models\Reserve');
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new \App\Notifications\VerifyEmailJapanese);
     }
 }

@@ -1,0 +1,24 @@
+.reserve__table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+}
+
+.reserve__table  tr {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000000;
+}
+
+.reserve__table  th {
+  width: 25%;
+  text-align: left;
+}
+
+.reserve__table  td {
+  width: 25%;
+}

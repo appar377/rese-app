@@ -1,0 +1,30 @@
+.header {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  margin: 30px 0 0;
+}
+
+.text__box {
+  width: 33%;
+  padding: 100px 25px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #999999;
+}
+
+.collation__message {
+  font-size: 22px;
+  padding: 25px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .text__box {
+    width: 100%;
+    padding: 70px 0;
+  }
+}

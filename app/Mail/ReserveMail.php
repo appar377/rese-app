@@ -20,7 +20,7 @@ class ReserveMail extends Mailable
      */
     public function __construct($reserve)
     {
-        $this->reserve= $reserve;
+        $this->reserve = $reserve;
     }
 
     /**

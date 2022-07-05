@@ -1,14 +1,24 @@
 <nav class="nav" id="nav">
   <ul>
     @if(Auth::check())
-      <li><a href="/">Home</a></li>
-      <li>
-        <form action="/logout" method="POST">
-          @csrf
-          <button class="logout_btn" type="submit">Logout</button>
-        </form>
-      </li>
-      <li><a href="/mypage">Mypage</a></li>
+      @can('user')
+        <li><a href="/">Home</a></li>
+        <li>
+          <form action="/logout" method="POST">
+            @csrf
+            <button class="logout_btn" type="submit">Logout</button>
+          </form>
+        </li>
+        <li><a href="/mypage">Mypage</a></li>
+      @else
+        <li><a href="/">Home</a></li>
+        <li>
+          <form action="/logout" method="POST">
+            @csrf
+            <button class="logout_btn" type="submit">Logout</button>
+          </form>
+        </li>
+      @endcan
     @else
       <li><a href="/">Home</a></li>
       <li><a href="/register">Registation</a></li>
