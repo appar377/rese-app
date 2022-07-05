@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
                     Mail::to($reserve->user->email)->send(new ReserveMail($reserve));
                 }
             }
-        });
+        })->dailyAt('7:00');
     }
 
     /**
