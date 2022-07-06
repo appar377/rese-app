@@ -1,11 +1,7 @@
 @extends('layouts.default')
 
 @section('pageCss')
-@if(app('env') == 'production')
-  <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
-@else
-  <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-@endif
+<link rel="stylesheet" href="{{ mix('css/index.css') }}">
 @endsection
 
 @section('content')
