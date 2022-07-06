@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ mix('css/management.css') }}">
+<link rel="stylesheet" href="{{ asset('css/management.css') }}">
 @endsection
 
 @section('content')

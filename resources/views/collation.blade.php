@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ mix('css/collation.css') }}">
+<link rel="stylesheet" href="{{ asset('css/collation.css') }}">
 @endsection
 
 @section('content')

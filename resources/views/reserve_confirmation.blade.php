@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ mix('css/reserve_confirmation.css') }}">
+<link rel="stylesheet" href="{{ asset('css/reserve_confirmation.css') }}">
 @endsection
 
 @section('content')
