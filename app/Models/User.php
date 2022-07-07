@@ -56,6 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail, AuthenticableTrai
         return $this->hasMany('App\Models\Reserve');
     }
 
+    public function shops()
+    { 
+        return $this->hasMany('App\Models\Shop');
+    }
+
     public function sendEmailVerificationNotification()
     {
         $this->notify(new \App\Notifications\VerifyEmailJapanese);
