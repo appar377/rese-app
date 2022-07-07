@@ -37,7 +37,7 @@
     @foreach($shops as $shop)
     <li class="shop__item">
       <div class="shop__item__img">
-        <img src="{{ asset('storage/'.$shop->img) }}" alt="">
+        <img src="{{ secure_url('storage/'.$shop->img) }}" alt="">
       </div>
       <div class="text__box">
         <p class="shop__item__ttl">{{ $shop->name }}</p>
