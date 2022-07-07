@@ -15,3 +15,11 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+mix.styles('public/css/index.css', 'public/css/jpn.min.css')
+
+mix.styles('public/css/default.css', 'public/css/jpn.min.css')
+
+mix.styles('public/css/reset.css', 'public/css/jpn.min.css')
+
+mix.styles('public/css/menu.css', 'public/css/jpn.min.css')
