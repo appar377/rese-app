@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([       
+            'id' => 1,
             'name' => 'admin',
             'email' => 'admin@example.com',
             'email_verified_at' => now(),
@@ -26,6 +27,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         User::create([       
+            'id' => 2,
             'name' => 'leader',
             'email' => 'leader@example.com',
             'email_verified_at' => now(),
@@ -36,6 +38,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         User::create([       
+            'id' => 3,
             'name' => 'user',
             'email' => 'user@example.com',
             'email_verified_at' => now(),

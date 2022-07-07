@@ -4,9 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Shop;
-use Facade\FlareClient\Stacktrace\File;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
 
 class ShopsTableSeeder extends Seeder
 {
@@ -18,6 +15,7 @@ class ShopsTableSeeder extends Seeder
     public function run()
     {
         Shop::create([
+            'id' => 1,
             'name' => '仙人',
             'user_id' => 2,
             'area_id' => 1,
@@ -29,6 +27,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 2,
             'name' => '牛助',
             'user_id' => 2,
             'area_id' => 2,
@@ -40,6 +39,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 3,
             'name' => '戦慄',
             'user_id' => 2,
             'area_id' => 3,
@@ -52,6 +52,7 @@ class ShopsTableSeeder extends Seeder
 
 
         Shop::create([
+            'id' => 4,
             'name' => 'ルーク',
             'user_id' => 2,
             'area_id' => 1,
@@ -63,6 +64,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 5,
             'name' => '志摩屋',
             'user_id' => 2,
             'area_id' => 3,
@@ -74,6 +76,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 6,
             'name' => '香',
             'user_id' => 2,
             'area_id' => 1,
@@ -85,6 +88,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 7,
             'name' => 'JJ',
             'user_id' => 2,
             'area_id' => 2,
@@ -96,6 +100,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 8,
             'name' => 'らーめん極み',
             'user_id' => 2,
             'area_id' => 1,
@@ -107,6 +112,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 9,
             'name' => '鳥雨',
             'user_id' => 2,
             'area_id' => 2,
@@ -118,6 +124,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 10,
             'name' => '築地色合',
             'user_id' => 2,
             'area_id' => 1,
@@ -129,6 +136,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 11,
             'name' => '晴海',
             'user_id' => 2,
             'area_id' => 2,
@@ -140,6 +148,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 12,
             'name' => '三子',
             'user_id' => 2,
             'area_id' => 3,
@@ -151,6 +160,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 13,
             'name' => '八戒',
             'user_id' => 2,
             'area_id' => 1,
@@ -162,6 +172,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 14,
             'name' => '福助',
             'user_id' => 2,
             'area_id' => 2,
@@ -173,6 +184,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 15,
             'name' => 'ラー北',
             'user_id' => 2,
             'area_id' => 1,
@@ -184,6 +196,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 16,
             'name' => '翔',
             'user_id' => 2,
             'area_id' => 2,
@@ -196,6 +209,7 @@ class ShopsTableSeeder extends Seeder
         
 
         Shop::create([
+            'id' => 17,
             'name' => '経緯',
             'user_id' => 2,
             'area_id' => 1,
@@ -207,6 +221,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 18,
             'name' => '漆',
             'user_id' => 2,
             'area_id' => 1,
@@ -218,6 +233,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 19,
             'name' => 'THE TOOL',
             'user_id' => 2,
             'area_id' => 3,
@@ -229,6 +245,7 @@ class ShopsTableSeeder extends Seeder
         ]);
 
         Shop::create([
+            'id' => 20,
             'name' => '木船',
             'user_id' => 2,
             'area_id' => 2,
