@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('pageCss')
-<link rel="stylesheet" href="{{ mix('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
 @section('content')
@@ -37,7 +37,7 @@
     @foreach($shops as $shop)
     <li class="shop__item">
       <div class="shop__item__img">
-        <img src="{{ secure_asset('storage/'.$shop->img) }}" alt="">
+        <img src="{{ asset('storage/'.$shop->img) }}" alt="">
       </div>
       <div class="text__box">
         <p class="shop__item__ttl">{{ $shop->name }}</p>
