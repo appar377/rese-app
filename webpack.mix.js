@@ -21,3 +21,23 @@ mix.postCss('public/css/default.css', 'public/css')
 mix.postCss('public/css/reset.css', 'public/css')
 
 mix.postCss('public/css/menu.css', 'public/css')
+
+mix.postCss('public/css/collation.css', 'public/css')
+
+mix.postCss('public/css/create_shop.css', 'public/css')
+
+mix.postCss('public/css/detail.css', 'public/css')
+
+mix.postCss('public/css/done.css', 'public/css')
+
+mix.postCss('public/css/login.css', 'public/css')
+
+mix.postCss('public/css/management.css', 'public/css')
+
+mix.postCss('public/css/mypage.css', 'public/css')
+
+mix.postCss('public/css/register.css', 'public/css')
+
+mix.postCss('public/css/reserve_confirmation.css', 'public/css')
+
+mix.postCss('public/css/thanks.css', 'public/css')
