@@ -79,7 +79,7 @@ a{
 
 .menu.open span:nth-of-type(1) {
   width: 50%;
-  top: 50%;
+  top: 48%;
   transform: rotate(45deg);
 }
 

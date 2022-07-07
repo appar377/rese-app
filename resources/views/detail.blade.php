@@ -25,13 +25,13 @@
     <form action="/reserve" method="POST">
       @csrf
       <div class="input__box">
-        <input name="date" id="date__input" class="date" type="date" value="{{ now()->format('Y-m-d') }}">
+        <input name="date" id="date__input" class="date" type="date" value="{{ now()->addDay(1)->format('Y-m-d') }}">
         @if ($errors->has('date'))
         <p>{{ $errors->first('date') }}</p>
         @endif
 
         <select name="time" id="time__input">
-          <option hidden>時間</option>
+          <option value="18:00" hidden>18:00</option>
           <option value="17:00">17:00</option>
           <option value="17:30">17:30</option>
           <option value="18:00">18:00</option>
@@ -47,7 +47,7 @@
         @endif
 
         <select name="number" id="number__input">
-          <option hidden>人数</option>
+          <option value="2" hidden>2</option>
           @for($i=1;$i<=10;$i++)
             <option value="{{$i}}">{{ $i }}人</option>
           @endfor
