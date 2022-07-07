@@ -19,7 +19,7 @@ class ShopsTableSeeder extends Seeder
     {
         Shop::create([
             'name' => '仙人',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 1,
             'course' => 'Aコース',
@@ -30,7 +30,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '牛助',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 2,
             'course' => 'Bコース',
@@ -41,7 +41,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '戦慄',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 3,
             'genre_id' => 3,
             'course' => 'Cコース',
@@ -53,7 +53,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => 'ルーク',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 4,
             'course' => 'Aコース',
@@ -64,7 +64,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '志摩屋',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 3,
             'genre_id' => 5,
             'course' => 'Bコース',
@@ -75,7 +75,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '香',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 2,
             'course' => 'Cコース',
@@ -86,7 +86,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => 'JJ',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 4,
             'course' => 'Aコース',
@@ -97,7 +97,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => 'らーめん極み',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 5,
             'course' => 'Bコース',
@@ -108,7 +108,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '鳥雨',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 3,
             'course' => 'Cコース',
@@ -119,7 +119,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '築地色合',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 1,
             'course' => 'Aコース',
@@ -130,7 +130,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '晴海',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 2,
             'course' => 'Bコース',
@@ -141,7 +141,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '三子',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 3,
             'genre_id' => 2,
             'course' => 'Cコース',
@@ -152,7 +152,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '八戒',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 3,
             'course' => 'Aコース',
@@ -163,7 +163,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '福助',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 1,
             'course' => 'Bコース',
@@ -174,7 +174,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => 'ラー北',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 5,
             'course' => 'Cコース',
@@ -185,7 +185,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '翔',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 3,
             'course' => 'Aコース',
@@ -197,7 +197,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '経緯',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 1,
             'course' => 'Bコース',
@@ -208,7 +208,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '漆',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 1,
             'genre_id' => 2,
             'course' => 'Cコース',
@@ -219,7 +219,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => 'THE TOOL',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 3,
             'genre_id' => 4,
             'course' => 'Aコース',
@@ -230,7 +230,7 @@ class ShopsTableSeeder extends Seeder
 
         Shop::create([
             'name' => '木船',
-            'user_id' => 11,
+            'user_id' => 2,
             'area_id' => 2,
             'genre_id' => 1,
             'course' => 'Bコース',
